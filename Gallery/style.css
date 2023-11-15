@@ -1,0 +1,76 @@
+body{
+    font-family: sans-serif;
+    background-color: blue;
+}
+
+.img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.img-container .image{
+    position: relative;
+    margin-right: -20px;
+    display: inline;
+    flex-direction: column;
+}
+
+.img-container .image img{
+    width: 300px;
+    height: 300px;
+    transition: transform 0.32s ease-in-out;
+}
+
+.img-container .image .name{
+    position: absolute;
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    display: none;
+    min-width: 100px;
+    width: 150px;
+    top: -55px;
+    padding: 10px 15px;
+}
+
+.img-container .image .name .text{
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    width: 150px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.img-container .image:hover .name{
+    display: flex;
+    transform: translateY(-20px);
+}
+
+.img-container .image .name::before{
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    left: 40%;
+    bottom: -20px;
+    border-top: 10px solid black;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.img-container .image:hover img{
+    transform: translateY(-20px);
+}
+
+@media (max-width: 680px){
+    .img-container{
+        flex-direction: column;
+        height: 250vh;
+    }
+}
